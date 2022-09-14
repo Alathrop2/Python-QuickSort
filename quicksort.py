@@ -1,21 +1,27 @@
- def quick_sort(sequence):
-        length = len(sequence)
-        if length <= 1:
-            return sequence
-            else:
-                pivot = sequence.pop()
+from re import A
 
-                items_greater - []
-                items_lower = []
 
-                for item in sequence:
-                    if item > pivot:
-                        items_greater.append(item)
+def quick_sort(integers):
+    # Your code here.
+    length = len(integers)
+    if length <= 1:
+        return integers
+    else:
+      # the .pop() is selecting a rando, number in the array, and setting it as the pivot point
+        pivot = integers.pop()
+    numbers_greater = []
+    numbers_lower = []
+    # this for loop is selecting the pivot point and moving the remaining numbers into arrays depending on if they are larger or smaller than the pivot number
+    for number in integers:
+        if number > pivot:
+            numbers_greater.append(number)
 
-                        else:
-                            items_lower.append(item)
+        else:
+            numbers_lower.append(number)
+    return quick_sort(numbers_lower) + [pivot] + quick_sort(numbers_greater)
 
-                            
-            return quick_sort(items_lower) + [pivot] + quick_sort(items_greater)
 
-            print(quick_sort([5,6,7,8,9,8,7,6,5,6,7]))
+print(quick_sort([5, 6, 2, 1, 3, 4, 9, 8, ]))
+
+
+pass
