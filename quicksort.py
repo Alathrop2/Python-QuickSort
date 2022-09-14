@@ -1,4 +1,3 @@
-from re import A
 
 
 def quick_sort(integers):
